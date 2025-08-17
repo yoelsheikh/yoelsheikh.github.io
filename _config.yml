@@ -41,7 +41,7 @@ linkedin_username: yoelsheikh
 
 # About Section
 about_title: Bio       
-about_profile_image: /images/pp.jpg
+about_profile_image: /images/ppbw.jpg
 about_content: | # this will include new lines to allow paragraphs
        Hello! I am Yousif, a mechanical engineer at heart with a passion for robotics. My master's thesis at the Robotics Research Lab focused on leveraging
        Unreal Engine to train autonomous RL policies using different modalities and reward formulations, with a consideration of framework reusability 
