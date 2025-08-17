@@ -45,7 +45,7 @@ about_profile_image: /images/pp.jpg
 about_content: | # this will include new lines to allow paragraphs
        Hello! I am Yousif, a mechanical engineer at heart with a passion for robotics. My master's thesis at the Robotics Research Lab focused on leveraging
        Unreal Engine to train autonomous RL policies using different modalities and reward formulations, with a consideration of framework reusability 
-       [GitHub Repository](https://github.com/YoElsheikh/ms-thesis-rrlab/tree/master). I am currently a research associate at the Insitute of Airact Systems (ILS).
+       [GitHub Repository](https://github.com/YoElsheikh/ms-thesis-rrlab/tree/master). I am currently a research associate at the Insitute of Aircraft Systems (ILS).
        My interests include Cyber Physical Systems, Control Theory, 3D Computer Vision, Trustworthy Machine Learning and Reinforcement Learning. I like coffee, but not because it tastes good.
 
        Download resumé: <span style="margin-right: 20px;"></span>
