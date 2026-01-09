@@ -392,51 +392,54 @@
     </div>
   </div>
 
-
   <!-- clustrmaps -->
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=VoEYIt3mdHlLehit6CqsRtPRerJII7YK0CTOhaLab6Q&cl=ffffff&w=a"></script>
+    <p align="center" style="margin: 8px 0 0 0;">
+      <script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=VoEYIt3mdHlLehit6CqsRtPRerJII7YK0CTOhaLab6Q&cl=ffffff&w=a"></script>
+    </p>
   
+  <!-- JS menu script -->
+  <script type="text/javascript">
+    function hideAll() {
+      var sections = document.getElementsByClassName('section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+      }
+
+      var links = document.getElementsByClassName('menu-link');
+      for (var j = 0; j < links.length; j++) {
+        links[j].classList.remove('active');
+      }
+    }
+
+    function showSection(id) {
+      hideAll();
+
+      var target = document.getElementById(id);
+      if (target) target.classList.add('active');
+
+      var links = document.getElementsByClassName('menu-link');
+      for (var j = 0; j < links.length; j++) {
+        if (links[j].getAttribute('href') === '#' + id) {
+          links[j].classList.add('active');
+        }
+      }
+
+      if (window.history && window.history.replaceState) {
+        history.replaceState(null, document.title, window.location.href.split('#')[0]);
+      }
+    }
+
+    function initSections() {
+      hideAll(); /* nothing shown on load */
+    }
+
+    window.onload = initSections;
+  </script>
+
 
 
 </body>
 </html>
 
-<!-- JS menu script -->
-<script type="text/javascript">
-  function hideAll() {
-    var sections = document.getElementsByClassName('section');
-    for (var i = 0; i < sections.length; i++) {
-      sections[i].classList.remove('active');
-    }
 
-    var links = document.getElementsByClassName('menu-link');
-    for (var j = 0; j < links.length; j++) {
-      links[j].classList.remove('active');
-    }
-  }
-
-  function showSection(id) {
-    hideAll();
-
-    var target = document.getElementById(id);
-    if (target) target.classList.add('active');
-
-    var links = document.getElementsByClassName('menu-link');
-    for (var j = 0; j < links.length; j++) {
-      if (links[j].getAttribute('href') === '#' + id) {
-        links[j].classList.add('active');
-      }
-    }
-
-    if (window.history && window.history.replaceState) {
-      history.replaceState(null, document.title, window.location.href.split('#')[0]);
-    }
-  }
-
-  function initSections() {
-    hideAll(); /* nothing shown on load */
-  }
-
-  window.onload = initSections;
-</script>
 
