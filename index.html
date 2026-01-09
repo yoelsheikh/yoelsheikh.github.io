@@ -85,6 +85,39 @@
     .menu a { cursor: pointer; }
     .menu a.active { font-weight: 600; }
 
+    /* clustrmaps css */
+    .clustrmaps-wrap {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      margin-top: 0;
+      padding-bottom: 0;
+      z-index: 9999;
+      text-align: right;
+    }
+    .clustrmaps-sep {
+      width: 140px;
+      height: 1px;
+      background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0)
+      );
+      margin: 0 0 6px auto;
+    }
+    #clustrmaps-container {
+      width: 180px;
+      max-width: 100%;
+      margin: 0 0 0 auto;
+      text-align: right;
+    }
+    #clustrmaps-container img,
+    #clustrmaps-container canvas {
+      width: 180px !important;
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
   </style>
 
   <link rel="shortcut icon" href="images/morse.svg">
@@ -289,7 +322,6 @@
 
               <div class="smallgap"></div>
 
-
               <p class="entry-title">
                 <strong>IPG Automotive GmbH</strong>
                 <a class="company-link" href="https://www.ipg-automotive.com/en" target="_blank" rel="noopener noreferrer">ipg-automotive.com</a>
@@ -389,14 +421,17 @@
       </table>
       </div>
 
+      <div class="clustrmaps-wrap">
+        <div class="clustrmaps-sep"></div>
+        <p class="muted" style="margin: 0 0 6px 0; font-size: 13px; color: #777; text-align: right;">visitors</p>
+        <div id="clustrmaps-container">
+          <script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=VoEYIt3mdHlLehit6CqsRtPRerJII7YK0CTOhaLab6Q&cl=ffffff&w=180"></script>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- clustrmaps -->
-    <p align="center" style="margin: 8px 0 0 0;">
-      <script type="text/javascript" id="clustrmaps" src="https://clustrmaps.com/map_v2.js?d=VoEYIt3mdHlLehit6CqsRtPRerJII7YK0CTOhaLab6Q&cl=ffffff&w=a"></script>
-    </p>
-  
   <!-- JS menu script -->
   <script type="text/javascript">
     function hideAll() {
@@ -430,16 +465,11 @@
     }
 
     function initSections() {
-      hideAll(); /* nothing shown on load */
+      hideAll(); /* clear menu after refresh */
     }
 
     window.onload = initSections;
   </script>
 
-
-
 </body>
 </html>
-
-
-
