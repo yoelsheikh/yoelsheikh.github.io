@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <style type="text/css">
+  a { color: #1772d0; text-decoration:none; }
+  a:focus, a:hover { color: #f09228; text-decoration:none; }
+
+  body,td,th {
+    font-family: 'Titillium Web', Verdana, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+  }
+
+  heading { font-size: 18px; font-weight: 600; }
+  sectionheading { font-size: 23px; font-weight: 600; }
+  pageheading { font-size: 38px; font-weight: 400; }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  strong { font-size: 17px; font-weight: 600; }
+
+  html, body { background:#ffffff; }
+  body { margin: 0; padding: 0; }
+
+  .paper {
+    width: 760px;
+    margin: 0 auto;
+    padding: 28px 0;
+  }
+
+  .paper-inner { padding: 0 20px; }
+
+  @media (max-width: 820px) {
+    .paper { width: 94%; }
+    .paper-inner { padding: 0 12px; }
+  }
+
+  img, video { max-width: 100%; height: auto; }
+
+  .muted { font-size: 15px; color: #666; }
+  .tight { margin-top: 0; }
+  </style>
+
+  <link rel="shortcut icon" href="../images/morse.svg">
+  <title>My First Post Title</title>
+  <meta name="Yousif M. Elsheikh Blog" http-equiv="Content-Type" content="Yousif M. Elsheikh Blog">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <div class="paper">
+    <div class="paper-inner">
+
+      <p class="muted"><a href="../index.html">← back</a></p>
+
+      <h1 style="font-size: 32px; font-weight: 400; margin: 20px 0 5px 0;">RV32I Unprivileged ISA</h1>
+      <p class="muted tight">April 19, 2026</p>
+      <hr/>
+      
+      <h2></h2>
+      <p>
+        In this post I wanna implement RISC-V for an upcoming project at work, i shall talk about implementation as much as I can.
+        This is something I intend to do in my free time, so I have a flexible deadline for it, but am expecting to have readable
+        version in two months and somewhat functioning parts.
+        <br>(Basically) the LLM disclosure: I will write this in my own writing style (which might
+        come off as a little stilted and informal) and will 
+        only use LLMs to make nice tables and figures.
+        Furthermore, I will also only use LLMs for debugging and review and not for writing any code from scratch.
+      </p>
+      <h2>RV32I</h2>
+      <p>
+        I will start with the simplest ISA and assembly and then build up my way to
+        the harware implementation. RV32I (base integer instruction set) will be used as
+        the base for the implementation. The details are in chapter 2 of the specification manual
+        for the Unprivileged ISA:
+      </br> <a href="https://docs.riscv.org/reference/isa/unpriv/unpriv-contributors.html">specification manual</a>
+        
+    </br> IEU is the execution and write back to memory in the fetch-decode-execute. 
+        Harts (hardware threads) are the synonyms of cores, each with its own registers, IEUs and ALUs,
+        by convention a program can be multithreded in several harts (if it was written to do so).  
+        </br> RV32I has 32 registers, each 31 (x1.. x31) general purpose registers + x0 (alwayszero) and the pc.
+      </p>
+
+
+    </div>
+  </div>
+</body>
+</html>
