@@ -82,11 +82,11 @@
         I will start with the simplest ISA and assembly and then build up my way to
         the harware implementation. RV32I (base integer instruction set) will be used as
         the base for the implementation. The details are in chapter 2 of the specification manual
-        for the Unprivileged ISA: <a href="https://docs.riscv.org/reference/isa/unpriv/unpriv-contributors.html">specification manual</a>
+        for the unprivileged ISA: <a href="https://docs.riscv.org/reference/isa/unpriv/unpriv-contributors.html">specification manual</a>
         
     </br> IEU is the execution and write back to memory in the fetch-decode-execute. 
-        Harts (hardware threads) are the synonyms of cores, each with its own registers, IEUs and ALUs,
-        by convention a program can be multithreded in several harts (if it was written to do so).  
+        In RISC-V, Harts (hardware threads) are the synonyms of cores, each with its own registers, IEUs and ALUs.
+        By convention a program can be multithreded in several harts (if it was written to do so).  
         </br> RV32I has 32 registers, each 31 (x1.. x31) general purpose registers + x0 (alwayszero) and the pc.
       </p>
 
