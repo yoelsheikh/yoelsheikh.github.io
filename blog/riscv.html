@@ -131,6 +131,13 @@
     </p>
     <p>
     #TODO: go through the table and instruction types and immediate values
+    Instructions can be r/i/s/u/b/j types, the type determines the instruction format. One thing to note here
+    is that the source assembly code and the encoding do not have a one to one mapping. 
+    imm is an immediate value and is embedded inside of the instruction. So, basically instead of loading a value to a register
+    and then performing an operation, the imm value is directly encoded in the instruction. 
+
+    I like to think about something like addi rd, rs1, imm as saying rd = rs1 + imm
+
     <br>
     #TODO: add graphs of example words (instruction encoding)
 
