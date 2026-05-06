@@ -140,6 +140,26 @@
 
     <br>
     #TODO: add graphs of example words (instruction encoding)
+    31      25 24   20 19   15 14  12 11    7 6      0
+    +---------+-------+-------+------+-------+---------+
+    | funct7  |  rs2  |  rs1  |f3    |  rd   | opcode  |
+    | 0100000 | 11110 | 00111 | 000  | 01110 | 0110011 |
+    +---------+-------+-------+------+-------+---------+
+    
+    This is an r-type intruction. The opcode makes it so. The funct3 and funct7 determine the specific instruction
+    (see the reference cards in <a href = "https://github.com/johnwinans/rvalp/releases">RVALP Releases</a>). Here for example the 
+    add and sub instructions have the same opcode (both are r-type) and the same funct3, but different funct7, add has 0000000 and sub has 0100000.
+    </p>
+    This is important if you want to decode the instruction and figure out what it does: you might first use the opcode to figure out 
+    the instruction type and then use the funct3 and funct7 to figure out the specific instruction. 
+    For example, if you have an instruction and you want to figure out if it is an add or a sub, you might first check if the opcode corresponds to an r-type instruction, 
+    then check if the funct3 is 000, and then check the funct7 to see if it is 0000000 (add) or 0100000 (sub).
+    Let's assume you want now to decode the funct3, you write a "routine" like funct3 = (*INSTR.* & *MASK*) >> 12.
+    This is masking the instruction with a mask that has 1s in the bits corresponding to the funct3 field and 0s elsewhere. The masking here is 
+    ANDing the instruction with the *MASK*. Then (funct3 is in bits 14-12) we shift the result to the right by 12 to get the value of funct3.
+    Then, you can use this value for a LUT to get the instruction.
+
+
 
 
 
