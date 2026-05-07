@@ -139,13 +139,15 @@
     I like to think about something like addi rd, rs1, imm as saying rd = rs1 + imm
 
     <br>
-    #TODO: add graphs of example words (instruction encoding)
-    31      25 24   20 19   15 14  12 11    7 6      0
-    +---------+-------+-------+------+-------+---------+
-    | funct7  |  rs2  |  rs1  |f3    |  rd   | opcode  |
-    | 0100000 | 11110 | 00111 | 000  | 01110 | 0110011 |
-    +---------+-------+-------+------+-------+---------+
-    
+
+      <pre>
+      31      25 24   20 19   15 14  12 11    7 6        0
+      +---------+-------+-------+------+-------+---------+
+      | funct7  |  rs2  |  rs1  |funct3|  rd   | opcode  |
+      | 0100000 | 11110 | 00111 | 000  | 01110 | 0110011 |
+      +---------+-------+-------+------+-------+---------+
+      </pre>
+
     This is an r-type intruction. The opcode makes it so. The funct3 and funct7 determine the specific instruction
     (see the reference cards in <a href = "https://github.com/johnwinans/rvalp/releases">RVALP Releases</a>). Here for example the 
     add and sub instructions have the same opcode (both are r-type) and the same funct3, but different funct7, add has 0000000 and sub has 0100000.
