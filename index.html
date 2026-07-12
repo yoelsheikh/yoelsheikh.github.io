@@ -104,6 +104,30 @@
     /* interactive menu */
     .section { display: none; }
     .section.active { display: block; }
+    
+    .news-box {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 12px;
+      padding-left: 20px;
+      font-size: 15px;
+    }
+
+    .news-item {
+      display: block;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      text-indent: -20px;
+      line-height: 1.5;
+    }
+
+    .news-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .news-date {
+      font-weight: 600;
+    }
 
     .menu a { cursor: pointer; }
     .menu a.active { font-weight: 600; }
@@ -217,6 +241,7 @@
       </table>
 
       <p class="menu" align="center" style="margin: 20px; font-size: 20px; padding-bottom: 10px;">
+        <a class="menu-link" href="#news" onclick="showSection('news'); return false;">news</a> |
         <a class="menu-link" href="#education" onclick="showSection('education'); return false;">education</a> |
         <a class="menu-link" href="#publications" onclick="showSection('publications'); return false;">publications</a> |
         <a class="menu-link" href="#projects" onclick="showSection('projects'); return false;">projects</a> |
@@ -226,6 +251,27 @@
       </p>
 
       <hr/>
+
+      <!-- ===== NEWS ===== -->
+<div class="section active" id="news">
+  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+    <tr>
+      <td><sectionheading>&nbsp;&nbsp;News</sectionheading></td>
+    </tr>
+  </table>
+
+  <div class="news-box">
+    <div class="news-item">— September 2026 - i will be presenting our paper at SafeComp (session 9) in Velancia, Spain <a href="https://safecomp2026.webs.upv.es/program-final/">program</a></div>
+    <div class="news-item">— September 2026 - i will be chairing the session AI and data analytics in operations and presenting our paper at DLRK in Aachen, Germany</div>
+    <div class="news-item">— July 2026 - science day <a href="https://www.ils.uni-stuttgart.de/institut/aktuelles/Tag-der-Wissenschaft-an-der-Universitaet-Stuttgart--das-ILS-oeffnet-seine-Tueren-00001/">link</a></div>
+    <div class="news-item">— June 2026 - our paper "a technical review of assurance methods for neural networks in airborne software" accepted at DLRK <a href="https://dlrk2026.org/">link</a></div>
+    <div class="news-item">— June 2026 - our paper "ASAB: adversarial sampling at code boundary" accepted at IRAI <a href="https://irai2026.ieee-ies.org/program/index.html">link</a></div>
+    <div class="news-item">— May 2026 - our paper "latent-space ODD-proxy framework for testing machine-learned avionics classifiers" accepted at DASC <a href="https://www.dasconline.org/">link</a></div>
+    <div class="news-item">— May 2026 - our paper "on the timing determinism of CUDA and Vulkan SC for safety-critical AI workloads on SoC integrated GPUs" accepted at SafeComp <a href="https://safecomp2026.org/">link</a></div>
+    <div class="news-item">— May 2025 - two papers accepted at DASC 2025</div>
+    <div class="news-item">— July 2025 - ILS annual hackathon <a href="https://www.instagram.com/reel/DNFdQfVtAXN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">instagram post</a></div>
+  </div>
+</div>
 
       <!-- ===== EDUCATION ===== -->
       <div class="section" id="education">
@@ -508,7 +554,7 @@
     }
 
     function initSections() {
-      hideAll(); /* clear menu after refresh */
+      showSection('news');
     }
 
     window.onload = initSections;
