@@ -161,6 +161,19 @@
     ANDing the instruction with the *MASK*. Then (funct3 is in bits 14-12) we shift the result to the right by 12 to get the value of funct3.
     Then, you can use this value for a LUT to get the instruction.
 
+    After some reading, I figured it is somewhat counter productive to just "learn things" about the RISC-V specification and it would make more sense
+    to directly start implementing an adder and see how to encode, decode and execute it and then abstract the operation.
+    I will implement both a bit adder and a hardware adder using SystemVerilog (step 7):
+
+    <div style="text-align: center;">
+      <img
+      src="../blog/riscv/adder_pipeline.png"
+      alt="adder RISC-V pipeline"
+      style="width: 300px; height: auto;"
+      >
+    </div>
+
+
 
 
 
